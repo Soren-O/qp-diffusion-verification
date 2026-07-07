@@ -2,14 +2,16 @@
 
 Computer-algebra (sympy) checks of every identity cited in the paper and its
 Supplemental Material. Each script prints PASS/FAIL lines and ends with
-`ALL PASS`.
+`ALL PASS` (`verify_supercurrent.py` instead prints the boxed results for
+direct comparison and exits cleanly).
 
 | Script | Checks |
 | --- | --- |
 | `verify_gA_convention.py` | Side-by-side audit of the two advanced-propagator conventions; the corrected column (g^A = -tau3 g^R† tau3) is the source of truth. Immutable regression baseline. |
 | `verify_traces.py` | Longitudinal trace identities: spectral flow, D_L/D_T, spatial current, Kupriyanov–Lukichev interface weights. |
 | `verify_fT.py` | Transverse (charge-imbalance) kinetic equation: kernel-channel projection, first Wigner correction, frozen-shell solutions, uniform and inhomogeneous spatial sectors. |
-| `verify_nonadiabatic.py` | O(hbar^2) retarded spectral residual; branch-coherence orders. |
+| `verify_nonadiabatic.py` | O(hbar^2) retarded spectral residual; branch-coherence orders; corrected-claims block (2026-07-07): generic tau1 source pin, its static-gap survival, its gap-slaved (Dd, Ddd) limit, and the tau2/tau3-sector O(hbar^2) propagator correction. |
+| `verify_tdep_inhomogeneous.py` | Combined space- and time-dependent gap Delta(x,t): fixed-E projection with local coefficients, no new terms in either scalar channel (identities J1-J6 cited in the paper's spectral-flow and self-consistent-feedback sections). |
 | `verify_proximity.py` | Complex spectral angle: D_L = cos^2(Im theta), D_T = cosh^2(Re theta), D_L D_T = N1^2. |
 | `verify_supercurrent.py` | Phase-gradient/depairing longitudinal–transverse coupling S(E) = 2Q Im sinh^2(theta). |
 
